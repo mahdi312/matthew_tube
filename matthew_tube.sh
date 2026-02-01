@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# yt-dlpp.sh — Interactive YouTube downloader with cookies.txt support
+# matthew_tube.sh — Interactive YouTube downloader with cookies.txt support
 # Requirements: yt-dlp, ffmpeg (recommended), jq (optional but nice)
 
 clear
 
 echo "======================================"
-echo "     YouTube Downloader (yt-dlp)"
+echo "   Matthew_tube Downloader (yt-dlp)   "
 echo "======================================"
 echo
 
