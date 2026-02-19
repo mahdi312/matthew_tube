@@ -36,12 +36,6 @@ Log "Script started" "Cyan"
 Log "======================================" "Cyan"
 
 
-if (-not (Get-Command yt-dlp -ErrorAction SilentlyContinue)) {
-    Write-Host "yt-dlp not found. Install: winget install yt-dlp" -ForegroundColor Red
-    exit 1
-}
-
-
 # ────────────────────────────────────────────────
 # Ask to check & install/update ALL dependencies
 # ────────────────────────────────────────────────
@@ -128,6 +122,13 @@ if ($checkDeps -match '^[yY]') {
     Write-Host "Skipping dependency check. Some features may not work if tools are missing." -ForegroundColor Yellow
 }
 Write-Host ""
+
+
+if (-not (Get-Command yt-dlp -ErrorAction SilentlyContinue)) {
+    Write-Host "yt-dlp not found. Install: winget install yt-dlp" -ForegroundColor Red
+    exit 1
+}
+
 
 # ────────────────────────────────────────────────
 # Proxy selection
@@ -353,4 +354,5 @@ switch ($mode) {
 }
 Stop-Transcript -ErrorAction SilentlyContinue
 Log "Finished"
+
 Write-Host "Finished. Log saved to $logFile" -ForegroundColor Green
